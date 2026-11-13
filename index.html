@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f1e8">
+  <title>Atelier No. 7 — Request an Appointment</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="page">
+    <aside class="hero" aria-label="Atelier No. 7 salon">
+      <div class="hero-shade"></div>
+      <div class="brand">
+        <span class="brand-mark">A</span>
+        <span class="brand-name">ATELIER NO. 7</span>
+      </div>
+      <div class="hero-copy">
+        <p class="eyebrow">PRIVATE APPOINTMENTS · NEW YORK</p>
+        <h2>Your Next Look <em>Begins Here</em></h2>
+        <p class="hero-description">A considered approach to modern hair, shaped around you and delivered with exceptional care.</p>
+      </div>
+      <div class="hero-footer">
+        <div><span class="eyebrow">VISIT</span><p>27 Mercer Street<br>New York, NY 10013</p></div>
+        <div><span class="eyebrow">CONTACT</span><p>+1 212 555 0177<br>hello@atelierno7.com</p></div>
+      </div>
+      <span class="photo-credit">ATELIER NO. 7</span>
+    </aside>
+
+    <section class="form-panel">
+      <div class="form-wrap">
+        <header class="form-header">
+          <p class="eyebrow gold">RESERVATIONS</p>
+          <h1>Book Your Experience</h1>
+          <p class="intro">Tell us what you have in mind. We’ll curate the details and personally confirm your appointment.</p>
+        </header>
+
+        <form id="booking-form" novalidate>
+          <div class="section-heading"><span>01</span><h2>Your details</h2><i></i></div>
+          <div class="fields">
+            <label class="field"><span>Full Name <b>*</b></span><input name="fullName" autocomplete="name" required placeholder=" "></label>
+            <label class="field"><span>Email Address <b>*</b></span><input name="email" type="email" autocomplete="email" required placeholder=" "></label>
+            <label class="field"><span>Phone Number <b>*</b></span><input name="phone" type="tel" autocomplete="tel" required placeholder=" "></label>
+            <label class="field select-field"><span>Service of Interest <b>*</b></span>
+              <select name="service" required>
+                <option value="" selected disabled></option>
+                <option>Signature Haircut</option>
+                <option>Cut &amp; Styling</option>
+                <option>Colour Consultation</option>
+                <option>Balayage / Highlights</option>
+                <option>Blowout</option>
+                <option>Bridal / Special Occasion</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="section-heading calendar-heading"><span>02</span><h2>Choose your time</h2><i></i></div>
+          <div class="calendar-card">
+            <div class="calendar-top">
+              <div><p class="eyebrow gold">SELECT A DATE</p><h3 id="month-label">October 2026</h3></div>
+              <div class="month-actions">
+                <button type="button" class="icon-button" id="prev-month" aria-label="Previous month">‹</button>
+                <button type="button" class="icon-button" id="next-month" aria-label="Next month">›</button>
+              </div>
+            </div>
+            <div class="calendar-grid calendar-weekdays" aria-hidden="true">
+              <span>S</span><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span>
+            </div>
+            <div class="calendar-grid" id="calendar-days" aria-label="Choose appointment date"></div>
+            <div class="calendar-legend"><span><i class="dot available"></i>Available</span><span><i class="dot unavailable"></i>Unavailable</span></div>
+            <p class="selected-date" id="selected-date" aria-live="polite">Select an available date.</p>
+            <input type="hidden" name="appointmentDate" id="appointment-date" required>
+          </div>
+
+          <div class="section-heading notes-heading"><span>03</span><h2>Inspiration &amp; notes</h2><i></i></div>
+          <label class="upload-box" for="inspiration">
+            <span class="upload-icon">⇧</span>
+            <span class="upload-main">Drop your images here, or <u>browse</u></span>
+            <span class="upload-help">Share your inspiration or current hairstyle · JPG, PNG or WebP · Max 8 MB each</span>
+            <input id="inspiration" name="inspiration" type="file" accept="image/jpeg,image/png,image/webp" multiple>
+            <span id="file-list" class="file-list" aria-live="polite"></span>
+          </label>
+          <label class="message-field"><span>Your Message <small>OPTIONAL</small></span><textarea name="message" rows="3" placeholder="Tell us a little about your desired look..."></textarea></label>
+
+          <label class="consent"><input type="checkbox" name="consent" required><span>I agree to the privacy policy and consent to being contacted about my appointment request.</span></label>
+          <p id="form-error" class="form-error" role="alert"></p>
+          <button type="submit" class="submit-button"><span>REQUEST AN APPOINTMENT</span><span aria-hidden="true">⟶</span></button>
+          <p class="fine-print">No payment is required. Your appointment will only be confirmed after our team contacts you.</p>
+          <div id="success-message" class="success-message" role="status" hidden></div>
+        </form>
+      </div>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
